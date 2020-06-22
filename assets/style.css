@@ -1,0 +1,44 @@
+body{
+    background-image: url(https://img.freepik.com/free-photo/modern-building-soccer-stadium-with-illumination_9083-2213.jpg?size=626&ext=jpg);
+    background-size: cover;
+}
+
+h1{
+    position: absolute;
+    left: 32%;
+    top: 22%;
+    font-family: 'Piedra', cursive;
+    font-size: 85px;
+    color: floralwhite;
+    letter-spacing: 10px;
+
+}
+
+.container{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button{
+    position: relative;
+    text-align: center;
+    width: 250px;
+    padding: 40px;
+    font-size: 35px;
+    color: aqua;
+    font-weight: 400;
+    font-family: 'Piedra', cursive;
+    border: 5px solid;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 1.5s;
+    letter-spacing: 10px;
+}
+
+.button:hover{
+    box-shadow: 0 20px 50px 0 aqua inset, 0 20px 50px 0 aqua;
+}
+
+
