@@ -3,7 +3,7 @@ body{
     background-size: cover;
 }
 
-h1{
+header{
     position: absolute;
     left: 32%;
     top: 22%;
@@ -11,6 +11,8 @@ h1{
     font-size: 85px;
     color: floralwhite;
     letter-spacing: 10px;
+    margin-top: 160px;
+    margin-left: 20px;
 
 }
 
@@ -40,5 +42,35 @@ h1{
 .button:hover{
     box-shadow: 0 20px 50px 0 aqua inset, 0 20px 50px 0 aqua;
 }
+
+h1{
+    font-size: small;
+    position: sticky;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Piedra', cursive;
+    color: floralwhite;
+    margin-top: 00px;
+
+}
+
+ul{
+    text-align: center;
+    margin-top: 250px;
+    font-size: 50px;
+    color: black;
+    font-family: 'Piedra', cursive;;
+}
+
+#button-a, #button-b, #button-c, #button-d {
+    transform: scale(1.5);
+}
+
+#score{
+    text-align: center;
+    font-size: 50px;
+    color: red;
+}
+
 
 
