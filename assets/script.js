@@ -26,6 +26,24 @@ var questionList = [
          "correct": "b",
          "userAnswer": null
         },
+        {
+        "question": "How many MVP's does Lebron James have?",
+         "a": "3",
+         "b": "4",
+         "c": "5",
+         "d": "6",
+         "correct": "b",
+         "userAnswer": null
+        },
+        {
+        "question": "How many championships does Kobe Bryant have?",
+         "a": "3",
+         "b": "4",
+         "c": "5",
+         "d": "6",
+         "correct": "c",
+         "userAnswer": null
+        }
 
 ];
 
