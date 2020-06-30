@@ -67,15 +67,17 @@ ul{
 }
 
 #score{
+    font-weight: 800;
     text-align: center;
     font-size: 50px;
     color: red;
+    margin-top: 600px;
 }
 
-.time{
+.clock{
     font-size: 50px;
     text-align: center;
-    margin-top: 800px;
+    /* margin-top: 800px; */
     color: white;
 }
 

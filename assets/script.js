@@ -1,3 +1,4 @@
+
 var questionList = [
     {
         "question": "What wide reciever has the best single season touchdown record?",
@@ -87,6 +88,7 @@ var score = document.body.querySelector("#score");
 var questionIndex = 0;
 
 function buttonHandler(event) {
+    
     var button = event.target;
     var userAnswer = button.getAttribute("data-answer");
     var questionId = parseInt(button.getAttribute("data-question"));
@@ -96,7 +98,7 @@ function buttonHandler(event) {
     questionList[questionId]["userAnswer"] = userAnswer;
 
     if(questionList[questionId]["userAnswer"] === questionList[questionId]["correct"]){
-        score.textContent = "You got it correct";
+        score.textContent = "Touchdown!";
         setTimeout(function(){
             questionIndex++;
             initializeQuestion();
@@ -104,7 +106,7 @@ function buttonHandler(event) {
         }, 5000);
     }
     else{
-        score.textContent = "You got it wrong";
+        score.textContent = "Fumble!";
         setTimeout(function(){
             questionIndex++;
             initializeQuestion();
@@ -138,25 +140,4 @@ function initializeQuestion(){
 initializeQuestion();
 
 
-// function startTimer(duration, display) {
-//     var timer = duration, minutes, seconds;
-//     setInterval(function () {
-//         minutes = parseInt(timer / 60, 10);
-//         seconds = parseInt(timer % 60, 10);
 
-//         minutes = minutes < 10 ? "0" + minutes : minutes;
-//         seconds = seconds < 10 ? "0" + seconds : seconds;
-
-//         display.textContent = minutes + ":" + seconds;
-
-//         if (--timer < 0) {
-//             timer = duration;
-//         }
-//     }, 1000);
-// }
-
-// window.onload = function () {
-//     var fiveMinutes = 60 * 5,
-//         display = document.querySelector('#time');
-//     startTimer(fiveMinutes, display);
-// };
