@@ -1,4 +1,4 @@
-
+//List of questions that will pop up throughout the course of the quiz
 var questionList = [
     {
         "question": "What wide reciever has the best single season touchdown record?",
@@ -48,6 +48,8 @@ var questionList = [
 
 ];
 
+
+// Timer countdown that starts at 3 minutes to answer all questions.
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
@@ -58,7 +60,7 @@ function startTimer(duration, display) {
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         display.textContent = minutes + ":" + seconds;
-
+        seconds--;
         if (--timer < 0) {
             timer = duration;
         }
@@ -66,27 +68,29 @@ function startTimer(duration, display) {
 }
 
 window.onload = function () {
-    var fiveMinutes = 60 * 3,
+    var threeMinutes = 60 * 3,
         display = document.querySelector('#time');
-    startTimer(fiveMinutes, display);
+    startTimer(threeMinutes, display);
 };
 
-
+//This section is selecting the body of the document for the question and all answer options
 var questionTag = document.body.querySelector("#question");
 var answerTagA = document.body.querySelector("#answer-a");
 var answerTagB = document.body.querySelector("#answer-b");
 var answerTagC = document.body.querySelector("#answer-c");
 var answerTagD = document.body.querySelector("#answer-d");
 
+//This is selectiong what button will be pressed and logged
 var buttonA = document.body.querySelector("#button-a");
 var buttonB = document.body.querySelector("#button-b");
 var buttonC = document.body.querySelector("#button-c");
 var buttonD = document.body.querySelector("#button-d");
 
+//Below is keeping track of what is answered correctly or incorrectly
 var score = document.body.querySelector("#score");
 
 var questionIndex = 0;
-
+//This function is logging the data input for the correct/incorrect answers
 function buttonHandler(event) {
     
     var button = event.target;
@@ -96,30 +100,33 @@ function buttonHandler(event) {
     console.log(userAnswer);
     console.log(questionId);
     questionList[questionId]["userAnswer"] = userAnswer;
-
+//If/else statements to alert if the user has answered them correct or incorrect
     if(questionList[questionId]["userAnswer"] === questionList[questionId]["correct"]){
         score.textContent = "Touchdown!";
         setTimeout(function(){
             questionIndex++;
             initializeQuestion();
             score.textContent= "";
-        }, 5000);
+        }, 3000);
     }
     else{
         score.textContent = "Fumble!";
+        
         setTimeout(function(){
             questionIndex++;
             initializeQuestion();
-            score.textContent= "";
-        }, 5000);
+            score.textContent= ""; 
+        }, 3000);
     }
 }
 
+//Event listeners added to make the button's responsive
 buttonA.addEventListener("click",buttonHandler);
 buttonB.addEventListener("click",buttonHandler);
 buttonC.addEventListener("click",buttonHandler);
 buttonD.addEventListener("click",buttonHandler);
 
+//This function start the quizzes process
 function initializeQuestion(){
     console.log(questionList[questionIndex]);
     var wholeObj = questionList[questionIndex];
@@ -138,6 +145,3 @@ function initializeQuestion(){
     buttonD.setAttribute("data-question", questionIndex);
 }
 initializeQuestion();
-
-
-
